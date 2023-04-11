@@ -1,0 +1,26 @@
+{
+  "name": "aquarius",
+  "version": "1.0.0",
+  "description": "Aquarius CSS Framework",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ralexrivero/aquarius.git"
+  },
+  "keywords": [
+    "CSS",
+    "CSS",
+    "Framework",
+    "Web",
+    "Design"
+  ],
+  "author": "Ronald Alexander Rivero",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ralexrivero/aquarius/issues"
+  },
+  "homepage": "https://github.com/ralexrivero/aquarius#readme"
+}
