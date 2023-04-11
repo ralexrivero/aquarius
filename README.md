@@ -16,7 +16,7 @@ Aquarius CSS is a lightweight, responsive, and modern CSS framework. It is built
 ### NPM
 
 ```bash
-npm install aquarius-css
+npm i aquarius-css
 ```
 
 ## Wiki

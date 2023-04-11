@@ -1,5 +1,5 @@
 {
-  "name": "aquarius",
+  "name": "aquarius-css",
   "version": "1.0.0",
   "description": "Aquarius CSS Framework",
   "main": "index.html",
@@ -12,13 +12,12 @@
   },
   "keywords": [
     "CSS",
-    "CSS",
     "Framework",
     "Web",
     "Design"
   ],
-  "author": "Ronald Alexander Rivero",
-  "license": "MIT",
+  "author": "Ronald Alexander Rivero <ralexrivero@gmail.com>",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/ralexrivero/aquarius/issues"
   },
