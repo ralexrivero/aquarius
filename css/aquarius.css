@@ -20,6 +20,11 @@
   --color-primary-900: #131313;
 
   --font-primary: 'Montserrat', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
   --font-size-base: 16px;
   --line-height-base: 1.5;
   --font-weight-normal: 400;
