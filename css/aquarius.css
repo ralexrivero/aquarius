@@ -20,13 +20,6 @@
   --color-primary-900: #131313;
 
   --font-primary: 'Montserrat', sans-serif;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  line-height: 1.5;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
   --font-size-base: 16px;
   --line-height-base: 1.5;
   --font-weight-normal: 400;
@@ -83,17 +76,21 @@
   --border-width: 1px;
   --border-radius: .5rem;
 
-  --mobile-s: 320px;
-  --mobile-m: 375px;
-  --mobile-l: 425px;
+  /**********************
+    * Breakpoints
+  **********************/
 
-  --tablet-s: 768px;
-  --tablet-m: 960px;
-  --tablet-l: 1024px;
+  --brk-mobile-s: 320px;
+  --brk-mobile-m: 375px;
+  --brk-mobile-l: 425px;
 
-  --desktop-s: 1280px;
-  --desktop-m: 1366px;
-  --desktop-l: 1440px;
+  --brk-tablet-s: 768px;
+  --brk-tablet-m: 960px;
+  --brk-tablet-l: 1024px;
+
+  --brk-desktop-s: 1280px;
+  --brk-desktop-m: 1366px;
+  --brk-desktop-l: 1440px;
 
 }
 
@@ -111,6 +108,7 @@ html {
   font-family: var(--font-primary);
   font-size: var(--font-size-base);
   background-color: #F4F4F4;
+  text-rendering: optimizeLegibility;
 }
 
 /*******************************************************************************************************
@@ -141,15 +139,15 @@ html {
 }
 
 /* text transformation */
-.text-uppercase {
+.txt-uppercase {
   text-transform: var(--text-transform-uppercase);
 }
 
-.text-lowercase {
+.txt-lowercase {
   text-transform: var(--text-transform-lowercase);
 }
 
-.text-capitalize {
+.txt-capitalize {
   text-transform: var(--text-transform-capitalize);
 }
 
@@ -164,33 +162,33 @@ html {
 }
 
 /* text alignment */
-.text-left {
+.txt-l {
   text-align: left;
 }
 
-.text-right {
+.txt-decoration-underline {
   text-align: right;
 }
 
-.text-center {
+.txt-c {
   text-align: center;
 }
 
-.text-justify {
+.txt-j {
   text-align: justify;
 }
 
 /* text-transform */
 
-.text-uppercase {
+.txt-up {
   text-transform: uppercase;
 }
 
-.text-lowercase {
+.txt-lw {
   text-transform: lowercase;
 }
 
-.text-capitalize {
+.txt-cap {
   text-transform: capitalize;
 }
 
@@ -227,19 +225,19 @@ html {
 }
 
 /* text decoration */
-.text-decoration-underline {
+.txt-decoration-underline {
   text-decoration: underline;
 }
 
-.text-decoration-overline {
+.txt-decoration-overline {
   text-decoration: overline;
 }
 
-.text-decoration-line-through {
+.txt-decoration-line-through {
   text-decoration: line-through;
 }
 
-.text-decoration-none {
+.txt-decoration-none {
   text-decoration: none;
 }
 /* font size */
@@ -373,6 +371,10 @@ use padding, margin, font-size, font-weight, line-height, text-transform, letter
 
 .m-0 {
   margin: 0;
+}
+
+.m-0a {
+  margin: 0 auto;
 }
 
 .m-t-0 {
@@ -752,13 +754,23 @@ use padding, margin, font-size, font-weight, line-height, text-transform, letter
 /*******************************************************************************************************
  * container
 *******************************************************************************************************/
-
 .container {
-  max-width: 100%;
+  width: 100%;
+  padding-right: var(--padding-xs);
+  padding-left: var(--padding-xs);
   margin-right: auto;
   margin-left: auto;
-  padding-right: 15px;
-  padding-left: 15px;
+}
+
+.container-full {
+  max-width: 100%;
+  padding: 0;
+}
+
+@media screen and (min-width:425px) {
+  .container-mb-s {
+    max-width: var(--brk-mobile-l);
+  }
 }
 
 @media (min-width: 576px) {
@@ -789,55 +801,72 @@ use padding, margin, font-size, font-weight, line-height, text-transform, letter
  * Flex
 *******************************************************************************************************/
 
-.flex {
+.f-wcc {
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.f-rsec {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+
+.f {
   display: flex;
 }
 
-.flex-row {
+.f-row {
   flex-direction: row;
 }
 
-.flex-row-reverse {
+.f-row-rev {
   flex-direction: row-reverse;
 }
 
-.flex-column {
+.f-col {
   flex-direction: column;
 }
 
-.flex-column-reverse {
+.f-col-rev {
   flex-direction: column-reverse;
 }
 
-.flex-wrap {
+.f-wrp {
   flex-wrap: wrap;
 }
 
-.flex-nowrap {
+.f-n-wrp {
   flex-wrap: nowrap;
 }
 
-.flex-wrap-reverse {
+.f-wrp-rev {
   flex-wrap: wrap-reverse;
 }
 
-.flex-fill {
+.f-fll {
   flex: 1 1 auto;
 }
 
-.flex-grow-0 {
+.f-grw-0 {
   flex-grow: 0;
 }
 
-.flex-grow-1 {
+.f-grw-1 {
   flex-grow: 1;
 }
 
-.flex-shrink-0 {
+.f-shr-0 {
   flex-shrink: 0;
 }
 
-.flex-shrink-1 {
+.f-shr-1 {
   flex-shrink: 1;
 }
 
@@ -873,201 +902,34 @@ use padding, margin, font-size, font-weight, line-height, text-transform, letter
  * Grid
 *******************************************************************************************************/
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+.grd {
+  display: grid;
 }
 
-.col {
-  position: relative;
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+.grd-col-1 {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
 }
 
-.col-1 {
-  flex: 0 0 8.333333%;
-  max-width: 8.333333%;
-}
-
-.col-2 {
-  flex: 0 0 16.666667%;
-  max-width: 16.666667%;
-}
-
-.col-3 {
-  flex: 0 0 25%;
-  max-width: 25%;
-}
-
-.col-4 {
-  flex: 0 0 33.333333%;
-  max-width: 33.333333%;
-}
-
-.col-5 {
-  flex: 0 0 41.666667%;
-  max-width: 41.666667%;
-}
-
-.col-6 {
-  flex: 0 0 50%;
-  max-width: 50%;
-}
-
-.col-7 {
-  flex: 0 0 58.333333%;
-  max-width: 58.333333%;
-}
-
-.col-8 {
-  flex: 0 0 66.666667%;
-  max-width: 66.666667%;
-}
-
-.col-9 {
-  flex: 0 0 75%;
-  max-width: 75%;
-}
-
-.col-10 {
-  flex: 0 0 83.333333%;
-  max-width: 83.333333%;
-}
-
-.col-11 {
-  flex: 0 0 91.666667%;
-  max-width: 91.666667%;
-}
-
-.col-12 {
-  flex: 0 0 100%;
-  max-width: 100%;
+.grid-cols-2 {
+  grid-template-columns: auto 25%;
+  grid-template-rows: auto;
 }
 
 /*******************************************************************************************************
- * grid breakpoints
+ * lists
 *******************************************************************************************************/
 
-/* Container Class */
-.container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-gap: var(--spacing-md);
-  margin: 0 auto;
+.li-none {
+  list-style: none;
+}
+
+
+/*******************************************************************************************************
+ * images
+*******************************************************************************************************/
+
+.img-responsive {
   max-width: 100%;
-  padding: var(--padding-md);
-}
-
-/* Full Width Container */
-.container-full {
-  grid-template-columns: 1fr;
-  padding: 0;
-}
-
-/* Container with 2 Columns */
-.container-2 {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-/* Container with 3 Columns */
-.container-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-/* Container with 4 Columns */
-.container-4 {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-/* Container with 5 Columns */
-.container-5 {
-  grid-template-columns: repeat(5, 1fr);
-}
-
-/* Container with 6 Columns */
-.container-6 {
-  grid-template-columns: repeat(6, 1fr);
-}
-
-/* Container with 7 Columns */
-.container-7 {
-  grid-template-columns: repeat(7, 1fr);
-}
-
-/* Container with 8 Columns */
-.container-8 {
-  grid-template-columns: repeat(8, 1fr);
-}
-
-/* Container with 9 Columns */
-.container-9 {
-  grid-template-columns: repeat(9, 1fr);
-}
-
-/* Container with 10 Columns */
-.container-10 {
-  grid-template-columns: repeat(10, 1fr);
-}
-
-/* Container with 11 Columns */
-.container-11 {
-  grid-template-columns: repeat(11, 1fr);
-}
-
-/* Column Class */
-.col {
-  padding: var(--padding-sm);
-}
-
-/* Full Width Column */
-.col-full {
-  grid-column: 1 / -1;
-}
-
-/* Column Spanning 2 Rows */
-.col-span-2 {
-  grid-row: span 2;
-}
-
-/* Column Spanning 3 Rows */
-.col-span-3 {
-  grid-row: span 3;
-}
-
-/* Column Spanning 4 Rows */
-.col-span-4 {
-  grid-row: span 4;
-}
-
-/* Column Spanning 5 Rows */
-.col-span-5 {
-  grid-row: span 5;
-}
-
-/* Column Spanning 6 Rows */
-.col-span-6 {
-  grid-row: span 6;
-}
-
-/* Column Spanning 7 Rows */
-.col-span-7 {
-  grid-row: span 7;
-}
-
-/* Column Spanning 8 Rows */
-.col-span-8 {
-  grid-row: span 8;
-}
-
-/* Column Spanning 9 Rows */
-.col-span-9 {
-  grid-row: span 9;
-}
-
-/* Column Spanning 10 Rows */
-.col-span-10 {
-  grid-row: span 10;
 }
