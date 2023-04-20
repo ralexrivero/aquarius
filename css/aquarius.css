@@ -1,5 +1,97 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+/********************************************************
+ General
+ ********************************************************/
+ :root {
+   text-rendering: optimizeLegibility;
+   --font-primary: 'Montserrat', sans-serif;
+   --font-size-base: 16px;
+   --line-height-base: 1.5;
+   --font-weight-normal: 400;
+ }
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  background-color: #F4F4F4;
+}
+
+
+body {
+  font-size: 16px;
+  background-color: #999;
+}
+
+/********************************************************
+ layout grid
+********************************************************/
+
+.App {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "aside"
+    "main"
+    "footer";
+  grid-template-columns: auto;
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 100vh;
+}
+
+header {
+  grid-area: header;
+  align-self: start;
+}
+
+aside {
+  grid-area: aside;
+  align-self: start;
+}
+
+main {
+  grid-area: main;
+  align-self: stretch;
+  height: 100%;
+}
+
+footer {
+  grid-area: footer;
+  align-self: end;
+}
+
+header, aside, footer {
+  max-height: fit-content;
+}
+
+/********************************************************
+ media queries
+********************************************************/
+
+@media screen and (min-width:768px) {
+  .App {
+    grid-template-areas:
+      "header header"
+      "main aside"
+      "footer footer";
+      grid-template-columns: 80% auto;
+      grid-template-rows: auto 1fr auto;
+  }
+
+  aside {
+    align-self: stretch;
+  }
+}
+
+
 :root {
 
   --primary-color: #333333;
@@ -19,10 +111,7 @@
   --color-primary-800: #333333;
   --color-primary-900: #131313;
 
-  --font-primary: 'Montserrat', sans-serif;
-  --font-size-base: 16px;
-  --line-height-base: 1.5;
-  --font-weight-normal: 400;
+
   --font-weight-bold: 700;
   --font-style-normal: normal;
   --font-style-italic: italic;
@@ -98,25 +187,13 @@
  * default
 *******************************************************************************************************/
 
-*, *::after, *::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-family: var(--font-primary);
-  font-size: var(--font-size-base);
-  background-color: #F4F4F4;
-  text-rendering: optimizeLegibility;
-}
 
 /*******************************************************************************************************
  * Font
 *******************************************************************************************************/
 
 /* font family */
-.font-primary {
+.f-primary {
   font-family: var(--font-primary);
 }
 
@@ -139,15 +216,15 @@ html {
 }
 
 /* text transformation */
-.txt-uppercase {
+.tt-up {
   text-transform: var(--text-transform-uppercase);
 }
 
-.txt-lowercase {
+.tt-low {
   text-transform: var(--text-transform-lowercase);
 }
 
-.txt-capitalize {
+.t-cap {
   text-transform: var(--text-transform-capitalize);
 }
 
@@ -162,29 +239,29 @@ html {
 }
 
 /* text alignment */
-.txt-l {
+.ta-l {
   text-align: left;
 }
 
-.txt-decoration-underline {
+.td-under {
   text-align: right;
 }
 
-.txt-c {
+.ta-c {
   text-align: center;
 }
 
-.txt-j {
+.ta-j {
   text-align: justify;
 }
 
 /* text-transform */
 
-.txt-up {
+.tt-up {
   text-transform: uppercase;
 }
 
-.txt-lw {
+.tt-lw {
   text-transform: lowercase;
 }
 
