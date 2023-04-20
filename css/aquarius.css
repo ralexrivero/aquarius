@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 /********************************************************
- General
- ********************************************************/
- :root {
-   text-rendering: optimizeLegibility;
-   --font-primary: 'Montserrat', sans-serif;
-   --font-size-base: 16px;
-   --line-height-base: 1.5;
-   --font-weight-normal: 400;
- }
+General
+********************************************************/
+
+:root {
+  text-rendering: optimizeLegibility;
+  --font-primary: 'Montserrat', sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+  --font-weight-normal: 400;
+}
 
 *,
 *::before,
@@ -25,14 +26,13 @@ html {
   background-color: #F4F4F4;
 }
 
-
 body {
   font-size: 16px;
   background-color: #999;
 }
 
 /********************************************************
- layout grid
+Layout Grid
 ********************************************************/
 
 .App {
@@ -73,24 +73,23 @@ header, aside, footer {
 }
 
 /********************************************************
- media queries
+Media Queries
 ********************************************************/
 
-@media screen and (min-width:768px) {
+@media screen and (min-width: 768px) {
   .App {
     grid-template-areas:
       "header header"
       "main aside"
       "footer footer";
-      grid-template-columns: 80% auto;
-      grid-template-rows: auto 1fr auto;
+    grid-template-columns: 80% auto;
+    grid-template-rows: auto 1fr auto;
   }
 
   aside {
     align-self: stretch;
   }
 }
-
 
 :root {
 
