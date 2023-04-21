@@ -13,7 +13,7 @@ Aquarius CSS is a lightweight, responsive, and modern CSS framework. It is built
 
 ## Environment
 
-- [Sass](https://sass-lang.com/)
+<!-- - [Sass](https://sass-lang.com/) -->
 
 ## Installation
 
