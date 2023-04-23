@@ -50,7 +50,8 @@ LAYOUT
 ****************************************/
 
 /* grid */
-.App {
+.App,
+body {
   display: grid;
   grid-template-areas:
     "header"
@@ -90,6 +91,7 @@ header, aside, footer {
 /* Media Queries */
 
 @media screen and (min-width: 768px) {
+  body,
   .App {
     grid-template-areas:
       "header header"

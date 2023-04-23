@@ -1,0 +1,19 @@
+header {
+  padding: 1rem;
+  background-color: #004D40;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+main {
+  background-color: #ddd;
+}
+
+aside {
+  background-color: #B2DFDB;
+}
+
+footer {
+  padding: .75rem;
+  background-color: #A7FFEB;
+  color: rgba(0, 0, 0, 0.87);
+}
