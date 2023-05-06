@@ -339,6 +339,54 @@ MODULES
   color: #000;
   }
 
+/* search  box */
+
+.searchBox {
+  display: inline-flex;
+  justify-content: flex-start;
+  border-radius: .5rem;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  padding: 1px;
+  background-color: #fff;
+}
+
+.searchBar {
+  border: 0;
+  flex: 1;
+}
+
+.searchBar:focus {
+  outline: 0;
+}
+
+.icon {
+  color: #2045a5;
+  padding: .5rem;
+  width: 2.5rem;
+  cursor: pointer;
+}
+
+.btn--search {
+  color: #eee;
+  background-color: #2045a5;
+  border: 0;
+  padding: .25rem .5rem;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+
+.btn--search:hover {
+  background-color: #163c99;
+}
+
+.btn--search:active {
+  background-color: #002a84;
+}
+
+
+
+
 /* animations */
 
 @keyframes oscilationX {
