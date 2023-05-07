@@ -384,6 +384,67 @@ MODULES
   background-color: #002a84;
 }
 
+/* flexchart */
+/* row chart */
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  max-width: 480px;
+  padding: .5rem;
+}
+
+.label--chart {
+  flex: 0 0 auto;
+  margin-right: 1rem;
+}
+
+.container--chart {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.chart {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  padding-left: .25rem;
+  padding-right: .25rem;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+}
+
+.chart:first-child {
+  border-radius: .5rem 0 0 .5rem;
+  padding-left: .5rem;
+}
+
+.chart:last-child {
+  border-radius: 0 .5rem .5rem 0;
+  padding-right: .5rem;
+}
+
+.chart--item01 {
+  flex-basis: 35%;
+  background-color: #7E57C2;
+  color: #fff;
+}
+
+.chart--item02 {
+  flex-basis:50%;
+  background-color: #BF360C;
+  color: #fff;
+}
+
+.chart--item03 {
+  flex-basis: 15%;
+  background-color: #0277BD;
+  color: #fff;
+}
+
+/* column chart */
 
 
 
