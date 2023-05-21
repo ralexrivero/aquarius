@@ -11,6 +11,10 @@
 
 Aquarius CSS is a lightweight, responsive, and modern CSS framework. It is built with Flexbox and CSS and Grid. It is also fully customizable and easy to use.
 
+## Environment
+
+- [Sass](https://sass-lang.com/)
+
 ## Installation
 
 ### NPM
