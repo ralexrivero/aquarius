@@ -269,6 +269,26 @@ MODULES
   margin-bottom: 20px;
 }
 
+/* forms */
+
+/* data field */
+
+.in,
+.in:default {
+  border: 1px solid blue;
+  border-radius: .4rem;
+  padding: .4rem;
+  margin: .5rem;
+}
+
+.in:valid {
+  border-color: green;
+}
+
+.in:invalid {
+  border-color: red;
+}
+
 /****************************************
 STATES
 ****************************************/
