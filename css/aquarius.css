@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Roboto:wght@400;500;700&display=swap');
 
 /****************************************
 BASE
+font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto', sans-serif;
 ****************************************/
 
 :root {
@@ -91,8 +93,8 @@ header, aside, footer {
 /* Media Queries */
 
 @media screen and (min-width: 768px) {
-  body,
-  .App {
+  .grid-2 body,
+  .grid-2 .App {
     grid-template-areas:
       "header header"
       "main aside"
@@ -240,18 +242,27 @@ MODULES
 .btn {
   display: inline-block;
   padding: .2rem .4rem;
-  border: 1px solid ;
+  border: 1px solid #333;
   border-radius: .5rem;
   font-size: 1rem;
   font-weight: bold;
-  line-height: 2px;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
   letter-spacing: normal;
   color: #333333;
   background-color: #F7F7F7;
   cursor: pointer;
+  transition: all .25s ease-in-out;
+}
+
+.btn--md {
+  padding: .5rem 1rem;
+}
+
+.btn--primary {
+  border-color: #5C6BC0;
+  background-color: #5C6BC0;
+  color: rgba(255, 255, 255, .87);
 }
 
 .alert {
@@ -268,6 +279,45 @@ MODULES
   padding: 20px;
   margin-bottom: 20px;
 }
+
+/* hero text/image */
+
+.hero {
+  width: 100%;
+}
+
+.hero--sections {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hero--img,
+.hero--text {
+  flex-basis: 50%;
+  flex-grow: 1;
+  align-self: center;
+}
+
+.hero--text {
+  padding: 2rem;
+}
+
+.hero--text h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero--text p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+
 
 /* forms */
 
@@ -293,17 +343,25 @@ MODULES
 STATES
 ****************************************/
 
-.button:hover {
+.btn:hover {
   background-color: #ddd;
 }
 
-.button:active {
+.btn:active {
   background-color: #bbb;
 }
 
-.button.disabled {
+.btn.disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.btn--primary:hover {
+  background-color: #3F51B5;
+}
+
+.btn--primary:active {
+  background-color: #3949AB;
 }
 
 .alert.success {
@@ -920,6 +978,7 @@ pre {
 
 /* images */
 
+img,
 .img-responsive {
   max-width: 100%;
 }
